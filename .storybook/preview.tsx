@@ -13,7 +13,7 @@ const preview: Preview = {
       test: 'todo',
     },
     options: {
-      storySort: { order: ['Overview', 'Components', '*'] },
+      storySort: { order: ['Overview', 'Examples', 'Components', '*'] },
     },
     backgrounds: {
       default: 'app',
