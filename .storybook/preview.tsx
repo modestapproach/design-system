@@ -23,7 +23,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className="font-sans p-8 bg-background text-foreground">
+      <div className="font-sans p-5 bg-background text-foreground">
         <Story />
       </div>
     ),
