@@ -1,7 +1,7 @@
 name = "design-system"
-main = "src/index.tsx"
 compatibility_date = "2024-07-18"
-compatibility_flags = ["nodejs_compat"]
 
-[build]
-command = "npm install"
+# This project deploys the Storybook static build to Cloudflare Pages.
+# Build command:   npm run build-storybook
+# Output directory: storybook-static
+pages_build_output_dir = "storybook-static"
