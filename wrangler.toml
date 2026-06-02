@@ -1,7 +1,9 @@
 name = "design-system"
 compatibility_date = "2024-07-18"
 
-# This project deploys the Storybook static build to Cloudflare Pages.
-# Build command:   npm run build-storybook
-# Output directory: storybook-static
-pages_build_output_dir = "storybook-static"
+# Static-assets Worker: serves the Storybook static build.
+# Build command (set in Cloudflare dashboard): npm run build-storybook
+# Deploy command (default): npx wrangler deploy
+[assets]
+directory = "./storybook-static"
+not_found_handling = "404-page"
