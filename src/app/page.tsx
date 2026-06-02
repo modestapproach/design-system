@@ -15,8 +15,15 @@ const palette = [
 ];
 
 const components = [
-  "Button", "Badge", "Card", "Input", "Label", "Alert",
-  "Tabs", "Switch", "Checkbox", "Dialog", "Dropdown Menu",
+  "Accordion", "Alert", "Alert Dialog", "Aspect Ratio", "Avatar", "Badge",
+  "Breadcrumb", "Button", "Button Group", "Calendar", "Card", "Carousel",
+  "Chart", "Checkbox", "Collapsible", "Combobox", "Command", "Context Menu",
+  "Dialog", "Drawer", "Dropdown Menu", "Empty", "Field", "Hover Card", "Input",
+  "Input Group", "Input OTP", "Item", "Kbd", "Label", "Menubar", "Native Select",
+  "Navigation Menu", "Pagination", "Popover", "Progress", "Radio Group",
+  "Resizable", "Scroll Area", "Select", "Separator", "Sheet", "Sidebar",
+  "Skeleton", "Slider", "Sonner", "Spinner", "Switch", "Table", "Tabs",
+  "Textarea", "Toggle", "Toggle Group", "Tooltip",
 ];
 
 export default function Home() {
