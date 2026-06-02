@@ -1,0 +1,41 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Overview" />
+
+<div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
+  <span className="font-serif" style={{ fontSize: "1.875rem", letterSpacing: "-0.02em", color: "var(--primary)" }}>DibsList</span>
+  <span style={{ background: "var(--secondary)", color: "var(--secondary-foreground)", borderRadius: "999px", padding: "4px 12px", fontSize: "12px", fontWeight: 500 }}>Design System</span>
+</div>
+
+<div className="font-serif" style={{ fontSize: "3.25rem", lineHeight: 1.05, letterSpacing: "-0.02em", margin: "0 0 1rem", color: "var(--foreground)", maxWidth: "32rem" }}>The best things are already around you.</div>
+
+<div style={{ fontSize: "1.125rem", color: "var(--muted-foreground)", maxWidth: "36rem", marginBottom: "2.5rem" }}>A warm, editorial component library built on shadcn/ui and Tailwind CSS — 55 components, all browsable here in Storybook. Pick any component from the sidebar to see its variants and states.</div>
+
+<div className="font-serif" style={{ fontSize: "1.75rem", letterSpacing: "-0.01em", color: "var(--foreground)", borderBottom: "1px solid var(--border)", paddingBottom: "0.5rem", marginBottom: "1rem" }}>Palette</div>
+
+<div style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--border)", marginBottom: "2.5rem" }}>
+  {["#F8F5EE", "#EFE6D5", "#E3D4BA", "#B4845F", "#5A3523", "#2D1C14", "#2F4A36", "#87977A", "#A45F2B", "#D6A84F", "#9E8DA7", "#5A5A35"].map((hex) => (
+    <div key={hex}>
+      <div style={{ background: hex, height: "56px" }} />
+      <div style={{ fontSize: "9px", fontFamily: "monospace", textAlign: "center", color: "var(--muted-foreground)", padding: "4px 0" }}>{hex}</div>
+    </div>
+  ))}
+</div>
+
+<div className="font-serif" style={{ fontSize: "1.75rem", letterSpacing: "-0.01em", color: "var(--foreground)", borderBottom: "1px solid var(--border)", paddingBottom: "0.5rem", marginBottom: "1rem" }}>Typography</div>
+
+<p style={{ color: "var(--muted-foreground)", marginBottom: "0.5rem" }}>
+  Display — <span className="font-serif" style={{ fontSize: "1.5rem", color: "var(--foreground)" }}>Instrument Serif</span>
+</p>
+<p style={{ color: "var(--muted-foreground)", marginBottom: "2.5rem" }}>
+  Interface &amp; body — <span className="font-sans" style={{ color: "var(--foreground)" }}>Instrument Sans</span>
+</p>
+
+<div className="font-serif" style={{ fontSize: "1.75rem", letterSpacing: "-0.01em", color: "var(--foreground)", borderBottom: "1px solid var(--border)", paddingBottom: "0.5rem", marginBottom: "1rem" }}>Getting started</div>
+
+```bash
+npm run storybook   # this component explorer (port 6006)
+npm run dev         # the DibsList landing page (Next.js, port 3000)
+```
+
+Add a component with `npx shadcn@latest add <name>`, then drop a `*.stories.tsx` next to it in `src/components/ui/`.

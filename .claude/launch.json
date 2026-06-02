@@ -12,6 +12,12 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": ["-lc", "source ~/.nvm/nvm.sh && nvm use 20 && npm run storybook"],
       "port": 6006
+    },
+    {
+      "name": "sbstatic",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-lc", "source ~/.nvm/nvm.sh && nvm use 20 && npx -y http-server storybook-static -p 6010 -c-1 --silent"],
+      "port": 6010
     }
   ]
 }
