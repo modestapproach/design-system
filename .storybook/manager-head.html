@@ -1,0 +1,40 @@
+<!--
+  Auto-recover from stale lazy-loaded chunks after a redeploy.
+
+  Storybook code-splits every story into a hashed chunk. Each deploy produces
+  new hashes, so a tab left open across a deploy will try to import a chunk
+  hash that no longer exists on the server -> "Failed to fetch dynamically
+  imported module". When that happens we reload once to fetch the fresh
+  manifest. Capped per session so a genuinely broken build can't loop.
+-->
+<script>
+  (function () {
+    var KEY = "sb-stale-chunk-reloads";
+    function reloadOnce() {
+      var n = 0;
+      try { n = parseInt(sessionStorage.getItem(KEY) || "0", 10) || 0; } catch (e) {}
+      if (n >= 2) return; // give up after 2 tries so a real outage can't loop
+      try { sessionStorage.setItem(KEY, String(n + 1)); } catch (e) {}
+      location.reload();
+    }
+    function isStaleChunk(msg) {
+      return (
+        !!msg &&
+        /dynamically imported module|Importing a module script failed|error loading dynamically imported module/i.test(
+          msg
+        )
+      );
+    }
+    window.addEventListener("vite:preloadError", function (e) {
+      try { e.preventDefault(); } catch (x) {}
+      reloadOnce();
+    });
+    window.addEventListener("unhandledrejection", function (e) {
+      var r = e && e.reason;
+      if (isStaleChunk(r && (r.message || "" + r))) reloadOnce();
+    });
+    window.addEventListener("error", function (e) {
+      if (isStaleChunk(e && e.message)) reloadOnce();
+    });
+  })();
+</script>
