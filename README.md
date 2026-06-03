@@ -21,7 +21,7 @@ Other apps reference the registry — they don't copy files manually.
 ```bash
 npx shadcn@latest add @dibslist/button
 npx shadcn@latest add @dibslist/dashboard   # whole compositions too
-npx shadcn@latest add @dibslist/theme        # the DibsList palette + Geist fonts
+npx shadcn@latest add @dibslist/vetiver      # the "Vetiver" theme — palette + Geist fonts
 ```
 
 **3. Let AI agents install from it** via the shadcn MCP server:

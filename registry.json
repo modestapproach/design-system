@@ -4,10 +4,10 @@
   "homepage": "https://design-system.theodoreyd.workers.dev",
   "items": [
     {
-      "name": "theme",
+      "name": "vetiver",
       "type": "registry:style",
-      "title": "DibsList Theme",
-      "description": "DibsList visual identity — warm earthy palette, tight radius, and the Geist typeface. Apply on top of a shadcn project to adopt the look.",
+      "title": "Vetiver",
+      "description": "Vetiver — DibsList's warm, earthy signature theme: cream, espresso, sage, and terracotta with the Geist typeface. Named for the grounding, woody-green scent it evokes.",
       "css": {
         "@import": "url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap')"
       },

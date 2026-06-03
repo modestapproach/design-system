@@ -82,14 +82,15 @@ const useMobile = {
   files: [{ path: "src/hooks/use-mobile.ts", type: "registry:hook" }],
 };
 
-// The DibsList theme — warm palette + Geist type. Apply with:
-//   npx shadcn@latest add @dibslist/theme
-const theme = {
-  name: "theme",
+// Vetiver — DibsList's signature theme (warm palette + Geist type). Apply with:
+//   npx shadcn@latest add @dibslist/vetiver
+// Named for the warm, woody-green scent; future themes can use other plants.
+const vetiver = {
+  name: "vetiver",
   type: "registry:style",
-  title: "DibsList Theme",
+  title: "Vetiver",
   description:
-    "DibsList visual identity — warm earthy palette, tight radius, and the Geist typeface. Apply on top of a shadcn project to adopt the look.",
+    "Vetiver — DibsList's warm, earthy signature theme: cream, espresso, sage, and terracotta with the Geist typeface. Named for the grounding, woody-green scent it evokes.",
   css: {
     "@import": "url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap')",
   },
@@ -160,7 +161,7 @@ const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "dibslist",
   homepage: BASE_URL,
-  items: [theme, useMobile, ...componentItems],
+  items: [vetiver, useMobile, ...componentItems],
 };
 
 writeFileSync("registry.json", JSON.stringify(registry, null, 2) + "\n");
