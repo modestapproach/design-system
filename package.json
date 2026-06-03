@@ -9,7 +9,10 @@
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy": "npm run build-storybook && wrangler pages deploy storybook-static --project-name=design-system"
+    "postbuild-storybook": "npm run registry:build",
+    "registry:gen": "node scripts/gen-registry.mjs",
+    "registry:build": "npm run registry:gen && shadcn build registry.json --output storybook-static/r",
+    "deploy": "npm run build-storybook && wrangler deploy"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

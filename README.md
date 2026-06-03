@@ -1,6 +1,38 @@
 # Design System
 
-A component library built on [shadcn/ui](https://ui.shadcn.com) + [Tailwind CSS](https://tailwindcss.com), with [Storybook](https://storybook.js.org) as the browsable component explorer. Built on Next.js (App Router) and deployed to Cloudflare Pages.
+A **central** component library built on [shadcn/ui](https://ui.shadcn.com) + [Tailwind CSS](https://tailwindcss.com), with [Storybook](https://storybook.js.org) as the browsable explorer. It is published as a **shadcn registry** so other apps (and AI agents) can install components from one source of truth.
+
+## Consuming this design system in another app
+
+Other apps reference the registry — they don't copy files manually.
+
+**1. Register the namespace** in the consuming app's `components.json`:
+
+```json
+{
+  "registries": {
+    "@dibslist": "https://design-system.theodoreyd.workers.dev/r/{name}.json"
+  }
+}
+```
+
+**2. Add components** (dependencies — npm + cross-component — resolve automatically):
+
+```bash
+npx shadcn@latest add @dibslist/button
+npx shadcn@latest add @dibslist/dashboard   # whole compositions too
+npx shadcn@latest add @dibslist/theme        # the DibsList palette + Geist fonts
+```
+
+**3. Let AI agents install from it** via the shadcn MCP server:
+
+```bash
+npx shadcn@latest mcp init --client claude   # or cursor / vscode
+```
+
+Then prompt: *"Show me the components in the @dibslist registry"* or *"Add the @dibslist card."*
+
+> Browse everything visually at **https://design-system.theodoreyd.workers.dev**. The registry JSON is served from the same deploy at `/r/{name}.json`.
 
 ## Stack
 
