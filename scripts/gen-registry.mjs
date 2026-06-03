@@ -91,14 +91,15 @@ const vetiver = {
   title: "Vetiver",
   description:
     "Vetiver — DibsList's warm, earthy signature theme: cream, espresso, sage, and terracotta with the Geist typeface. Named for the grounding, woody-green scent it evokes.",
-  css: {
-    "@import": "url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap')",
-  },
+  // Fonts: prefer the next/font variable that create-next-app sets up
+  // (--font-geist-sans / --font-geist-mono), falling back to a loaded "Geist"
+  // family, then system fonts. This avoids a brittle CSS @import and makes the
+  // theme turnkey for Next projects.
   cssVars: {
     theme: {
-      "font-sans": "Geist, ui-sans-serif, system-ui, sans-serif",
-      "font-serif": "Geist, ui-sans-serif, system-ui, sans-serif",
-      "font-mono": "Geist Mono, ui-monospace, SF Mono, Menlo, monospace",
+      "font-sans": "var(--font-geist-sans), Geist, ui-sans-serif, system-ui, sans-serif",
+      "font-serif": "var(--font-geist-sans), Geist, ui-sans-serif, system-ui, sans-serif",
+      "font-mono": "var(--font-geist-mono), Geist Mono, ui-monospace, SF Mono, Menlo, monospace",
     },
     light: {
       radius: "0.4rem",
